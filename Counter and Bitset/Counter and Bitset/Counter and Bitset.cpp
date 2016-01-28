@@ -23,17 +23,12 @@ int main()
 
 	for (int i = 0; i <= FreeSpace; i++)
 	{
-
-		bitset<Length> A_2 = N2 << (FreeSpace + 2 + A0 + A1 - i);
-
 		for (int j = i; j <= FreeSpace; j++)
 		{
-
-			bitset<Length> A_1 = N1 << (FreeSpace + 1 + A0 - j);
-
 			for (int k = j; k <= FreeSpace; k++)
 			{
-
+				bitset<Length> A_2 = N2 << (FreeSpace + 2 + A0 + A1 - i);
+				bitset<Length> A_1 = N1 << (FreeSpace + 1 + A0 - j);
 				bitset<Length> A_0 = N0 << (FreeSpace - k);
 				bitset<Length> Combined = A_0 | A_1 | A_2;
 
