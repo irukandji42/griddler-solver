@@ -2,19 +2,18 @@
 #include <bitset>
 #include <math.h>
 #include <time.h>
+#include <vector>
 using namespace std;
 
 const int Length = 25;
 
-int A2 = 1;
-int A1 = 1;
-int A0 = 1;
+vector<int> Array = { 3,2,1 };
 
-int N2 = (int(pow(double(2), double(A2))) - 1);
-int N1 = (int(pow(double(2), double(A1))) - 1);
-int N0 = (int(pow(double(2), double(A0))) - 1);
+int N2 = (int(pow(double(2), double(Array[0]))) - 1);
+int N1 = (int(pow(double(2), double(Array[1]))) - 1);
+int N0 = (int(pow(double(2), double(Array[2]))) - 1);
 
-int FreeSpace = Length - (A0 + A1 + A2 + 2);
+int FreeSpace = Length - (Array[0] + Array[1] + Array[2] + 2);
 
 int main()
 {
@@ -27,12 +26,12 @@ int main()
 		{
 			for (int k = j; k <= FreeSpace; k++)
 			{
-				bitset<Length> A_2 = N2 << (FreeSpace + 2 + A0 + A1 - i);
-				bitset<Length> A_1 = N1 << (FreeSpace + 1 + A0 - j);
+				bitset<Length> A_2 = N2 << (FreeSpace + 2 + Array[2] + Array[1] - i);
+				bitset<Length> A_1 = N1 << (FreeSpace + 1 + Array[2] - j);
 				bitset<Length> A_0 = N0 << (FreeSpace - k);
 				bitset<Length> Combined = A_0 | A_1 | A_2;
 
-				/*cout << Combined << endl;*/
+				cout << Combined << endl;
 			}
 		}
 	}
