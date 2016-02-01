@@ -75,24 +75,28 @@ int main()
 
 	for (int i = 0; i < BitResultFetched.size(); i++)
 	{
-		
-		if (i == 0)
-		{
-			Compare = (BitResultFetched[0] & BitResultFetched[1]);
-		}
-		else
-		{
-			Compare = Compare & BitResultFetched[i];
-		}
-		/*cout << BitResultFetched[i] << endl;*/
+		cout << BitResultFetched[i] << endl;
 	}
-
-	cout << Compare << endl;
+	
+	cout << BitResultFetched.size() << endl;
 
 	return 0;
 }
 
-
+//for (int i = 0; i < BitResultFetched.size(); i++)
+	//{
+	//	
+	//	if (i == 0)
+	//	{
+	//		Compare = (BitResultFetched[0] & BitResultFetched[1]);
+	//	}
+	//	else
+	//	{
+	//		Compare = Compare & BitResultFetched[i];
+	//	}
+	//	cout << BitResultFetched[i] << endl;
+	//}
+	//cout << Compare << endl;
 
 
 
