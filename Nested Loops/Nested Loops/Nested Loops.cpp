@@ -14,17 +14,12 @@ int main()
 	int Depth = 0;
 	cin >> Depth;
 
-	vector<int> Position;
-
-	for (int i = 0; i < Depth; i++)
-	{
-		Position.push_back(0);
-	}
+	vector<int> Position (Depth);
 
 	vector<vector<int>> FetchResults;
 	DecimalComb(0, Length, 0, Depth - 1, Position, FetchResults);
 
-	cout << FetchResults[2][1] << endl;
+	/*cout << FetchResults[2][1] << endl;*/
 	
 	
 	return 0;
@@ -45,8 +40,9 @@ int DecimalComb(int Index, int Length, int Depth, int MaxDepth, vector<int> Posi
 		{
 			for (int i = 0; i < Position.size(); i++)
 			{
-				/*cout << Position[i];*/
+				cout << Position[i];
 			}
+			cout << endl;
 			Result.push_back(Position);
 		}
 	}
